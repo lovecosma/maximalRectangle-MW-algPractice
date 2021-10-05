@@ -1,0 +1,6 @@
+
+
+
+const maximalRectangle = (matrix) => {
+
+}
