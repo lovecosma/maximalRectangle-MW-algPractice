@@ -8,6 +8,9 @@ let dpl = [[...testMatrix[0]], ...testMatrix].map(arr => arr.map(index => 0))
 let dpr = [[...testMatrix[0]], ...testMatrix].map(arr => arr.map(index => arr.length-1))
 let lb = 0
 
+// Find max height at anygiven point, store it in dph
+// Also find left bound of any given index using same spot above
+
     for(let x = 1; x < testMatrix.length+1; x++){
         for(let y = 0; y < testMatrix[0].length; y++){
             if(testMatrix[x-1][y] === "1"){
@@ -18,7 +21,8 @@ let lb = 0
             }
         }
         
-      
+ //Find right bound by starting at end of array and using same technique as right bound.   
+
         let rb = testMatrix[0].length - 1
         for(let y = testMatrix[0].length-1; y > -1; y--){
             if(testMatrix[x-1][y] === "1"){
@@ -28,6 +32,8 @@ let lb = 0
             }
         }
     }
+
+// Compute area, l*w.  l is area between left bound and right, w is max height at given index. All ones represent potential rectangles.
 
     let maxarea = 0
 
